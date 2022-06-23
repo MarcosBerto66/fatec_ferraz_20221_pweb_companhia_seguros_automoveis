@@ -1,0 +1,3 @@
+• tbCliente (IdCliente(PK), nomeCliente, rgCliente, cpfCliente, logradouroCliente, numCliente, cidadeCliente, ufCliente, cepCliente, bairroCliente)
+• tbTelefoneCliente (IdCliente(PK/FK), NumTelefoneCliente(PK))
+• tbVeiculo (IdVeiculo(PK), placaVeiculo, renavamCliente, fabricanteVeiculo, modeloVeiculo, anoVeiculo)
