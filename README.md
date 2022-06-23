@@ -3,7 +3,7 @@
 
 ## Introdução
 
-Projeto final para a matéria de “Programação para WEB”, utilizando a linguagem de programação PHP. O projeto consiste na análise do estudo de caso, desenvolvimento/construção da base de dados, aplicando as técnicas de modelagem ENTIDADE – RELACIONAMENTO utilizando os modelos CONCEITUAL, LÓGICO e FÍSICO. 
+Projeto final para a matéria de “Programação para WEB”, utilizando a linguagem de programação PHP. O projeto consiste na análise do estudo de caso, desenvolvimento/construção da base de dados, aplicando as técnicas de modelagem ENTIDADE – RELACIONAMENTO utilizando os modelos CONCEITUAL, LÓGICO e FÍSICO, e a elaboração de um site com a possibilidade de realizar as quatro operações básicas utilizadas em uma base de dados (CRUD).
 
 ## Tecnologias utilizadas:
 

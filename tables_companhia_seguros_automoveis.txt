@@ -1,3 +1,4 @@
-• tbCliente (IdCliente(PK), nomeCliente, rgCliente, cpfCliente, logradouroCliente, numCliente, cidadeCliente, ufCliente, cepCliente, bairroCliente)
-• tbTelefoneCliente (IdCliente(PK/FK), NumTelefoneCliente(PK))
-• tbVeiculo (IdVeiculo(PK), placaVeiculo, renavamCliente, fabricanteVeiculo, modeloVeiculo, anoVeiculo)
+• tbCliente (idCliente(PK), nomeCliente, rgCliente, cpfCliente, logradouroCliente, numCliente, cidadeCliente, ufCliente, cepCliente, bairroCliente)
+• tbTelefoneCliente (idCliente(PK/FK), numTelefoneCliente(PK))
+• tbVeiculo (idVeiculo(PK), placaVeiculo, renavamVeiculo, fabricanteVeiculo, modeloVeiculo, anoVeiculo)
+• tbOcorrencia (idOcorrencia(PK), idVeiculo(FK), dataOcorrencia, logradouroOcorrencia, cidadeOcorrencia, ufOcorrencia, cepOcorrencia, bairroOcorrencia, descricaoOcorrencia)
