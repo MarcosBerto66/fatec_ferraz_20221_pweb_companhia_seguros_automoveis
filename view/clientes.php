@@ -10,7 +10,6 @@
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css'>
 
     <!-- Classes e instâncias necessárias (PHP)-->
-    <?php require_once("../model/Cliente.php")?>
     <?php require_once("../controller/ClienteController.php")?>
     <?php $clienteController = new ClienteController();?>
   </head>
@@ -26,35 +25,38 @@
         </form>
         <button class='btn btn-outline-success col-2 mx-auto' data-toggle='modal' data-target='.bd-example-modal-lg'><i class="bi bi-plus-circle-fill"></i> Novo Partido</button>
       </div>
-      <table class="table mt-3 mb-5">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nome</th>
-            <th scope="col">RG</th>
-            <th scope="col">CPF</th>
-            <th scope="col">Endereço</th>
-            <th scope="col">Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-          $rows = $clienteController->listarTodosClientes();
-          if(mysqli_num_rows($rows) > 0){
-            while($element = mysqli_fetch_assoc($rows)){
-              echo "<tr>";
-              echo "  <td>".$element['idCliente']."</td>";
-              echo "  <td>".$element['nomeCliente']."</td>";
-              echo "  <td>".$element['rgCliente']."</td>";
-              echo "  <td>".$element['cpfCliente']."</td>";
-              echo "  <td>".$element['logradouroCliente']."</td>";
-              echo "</tr>";
+      <div class="table-responsive mt-3 mb-5">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nome</th>
+              <th scope="col">RG</th>
+              <th scope="col">CPF</th>
+              <th scope="col">Endereço</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            $rows = $clienteController->listarTodosClientes();
+            if(mysqli_num_rows($rows) > 0){
+              while($element = mysqli_fetch_assoc($rows)){
+                echo "<tr>";
+                echo "  <td>".$element['idCliente']."</td>";
+                echo "  <td>".$element['nomeCliente']."</td>";
+                echo "  <td>".$element['rgCliente']."</td>";
+                echo "  <td>".$element['cpfCliente']."</td>";
+                echo "  <td>".$element['logradouroCliente']."</td>";
+                echo "  <td></td>";
+                echo "</tr>";
+              }
             }
-          }
-            
-          ?>
-        </tbody>
-      </table>
+              
+            ?>
+          </tbody>
+        </table>
+      </div>
     </div>
        <!--Bootstrap Bundle with Popper -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

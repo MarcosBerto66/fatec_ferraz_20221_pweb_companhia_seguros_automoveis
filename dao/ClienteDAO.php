@@ -1,5 +1,6 @@
 <?php
 
+require_once("../model/Cliente.php");
 require_once("BancoDAO.php");
 
     class ClienteDAO{
