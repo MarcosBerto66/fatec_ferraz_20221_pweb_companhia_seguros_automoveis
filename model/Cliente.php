@@ -72,47 +72,47 @@
             $this->telefones = $telefones;
         }
 
-        public function getId($id){
+        public function getId(){
             return $this->id;
         }
 
-        public function getNome($nome){
+        public function getNome(){
             return $this->nome;
         }
 
-        public function getRg($rg){
+        public function getRg(){
             return $this->rg;
         }
 
-        public function getCpf($cpf){
+        public function getCpf(){
             return $this->cpf;
         }
 
-        public function getUf($uf){
+        public function getUf(){
             return $this->uf;
         }
 
-        public function getCidade($cidade){
+        public function getCidade(){
             return $this->cidade;
         }
 
-        public function getLogradouro($logradouro){
+        public function getLogradouro(){
             return $this->logradouro;
         }
 
-        public function getBairro($bairro){
+        public function getBairro(){
             return $this->bairro;
         }
 
-        public function getCep($cep){
+        public function getCep(){
             return $this->cep;
         }
 
-        public function getNum($num){
+        public function getNum(){
             return $this->num;
         }
 
-        public function getTelefones($telefones){
+        public function getTelefones(){
             return $this->telefones;
         }
     }

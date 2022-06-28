@@ -28,6 +28,13 @@ require_once("BancoDAO.php");
             mysqli_close($this->banco->getConexao());
             return $result;
         }
+
+        public function adicionarCliente($cliente){
+            $sql = "INSERT INTO `tbcliente` (`idCliente`, `nomeCliente`, `rgCliente`, `cpfCliente`, `ufCliente`, `cidadeCliente`, `logradouroCliente`, `bairroCliente`, `cepCliente`, `numCliente`) VALUES (NULL, '".$cliente->getNome()."', '".$cliente->getRg()."', '".$cliente->getCpf()."', '".$cliente->getUf()."', '".$cliente->getCidade()."', '".$cliente->getLogradouro()."', '".$cliente->getBairro()."', '".$cliente->getCep()."', '".$cliente->getNum()."')";
+            $result = mysqli_query($this->banco->getConexao(), $sql) or die("Erro ao retornar os dados.");
+            mysqli_close($this->banco->getConexao());
+            return $result;
+        }
     }
 
 ?>

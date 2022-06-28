@@ -15,6 +15,7 @@
         }
 
         public function deletarCliente($cliente){
+            $clienteDAO = new ClienteDAO();
             if($this->clienteDAO->deletarCliente($cliente)){
                 echo "<script language='javascript' type='text/javascript'>
                 alert('Dados deletados com sucesso!')
@@ -23,21 +24,49 @@
             }
         }
 
+        public function adicionarCliente(){
+            $clienteDAO = new ClienteDAO();
+            $cliente = new Cliente();
+            $cliente->setNome($_POST['nomeCliente']);
+            $cliente->setRg($_POST['rgCliente']);
+            $cliente->setCpf($_POST['cpfCliente']);
+            $cliente->setUf($_POST['ufCliente']);
+            $cliente->setCidade($_POST['cidadeCliente']);
+            $cliente->setLogradouro($_POST['logradouroCliente']);
+            $cliente->setBairro($_POST['bairroCliente']);
+            $cliente->setCep($_POST['cepCliente']);
+            $cliente->setNum($_POST['numCliente']);
+            if ($clienteDAO->adicionarCliente($cliente)) {
+                echo "<script>alert('Registro incluído com sucesso!');document.location='../view/clientes.php'</script>";
+            } else {
+                echo "<script>alert('Erro ao gravar registro!, verifique se o livro não está duplicado');history.back()</script>";
+            }
+        }
+
     }
 
-    if(isset($_GET['action']) && isset($_GET['id'])){
+    if(isset($_GET['action'])){
 
         $clienteController = new ClienteController();
     
         $action = $_GET['action'];
-        $id = $_GET['id'];
+        echo $action;
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+        }
         
         switch ($action) {
             case 'delete':
+                echo $id;
                 $cliente = new Cliente();
                 $cliente->setId($id);
-                $clienteController->deletarCliente($cliente);
                 echo $cliente->getId();
+                $clienteController->deletarCliente($cliente);
+                
+                break;
+
+            case 'create':
+                $clienteController->adicionarCliente();
                 break;
             
             default:
