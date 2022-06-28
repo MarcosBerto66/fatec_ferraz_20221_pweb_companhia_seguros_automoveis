@@ -14,7 +14,7 @@
         private $num;
         private $telefones;
 
-        public function __construct($id = null, $nome = null, $rg = null, $cpf = null, $uf = null, $cidade = null, $logradouro = null, $bairro = null, $cep = null, $num = null, $telefones = null){
+        /*public function __construct($id = null, $nome = null, $rg = null, $cpf = null, $uf = null, $cidade = null, $logradouro = null, $bairro = null, $cep = null, $num = null, $telefones = null){
             $this->id = $id;
             $this->nome = $nome;
             $this->rg = $rg;
@@ -26,7 +26,7 @@
             $this->cep = $cep;
             $this->num = $num;
             $this->telefones = $telefones;
-        }
+        }*/
 
         public function setId($id){
             $this->id = $id;

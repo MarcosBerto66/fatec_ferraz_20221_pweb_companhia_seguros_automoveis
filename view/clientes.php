@@ -23,7 +23,7 @@
           </div>
           <button class='btn btn-outline-primary col-2 mx-auto'><i class="bi bi-search"></i> Pesquisar</button>
         </form>
-        <button class='btn btn-outline-success col-2 mx-auto' data-toggle='modal' data-target='.bd-example-modal-lg'><i class="bi bi-plus-circle-fill"></i> Novo Partido</button>
+        <button class='btn btn-outline-success col-2 mx-auto' data-toggle='modal' data-target='.bd-example-modal-lg'><i class="bi bi-plus-circle-fill"></i> Novo Cliente</button>
       </div>
       <div class="table-responsive mt-3 mb-5">
         <table class="table">
@@ -48,11 +48,10 @@
                 echo "  <td>".$element['rgCliente']."</td>";
                 echo "  <td>".$element['cpfCliente']."</td>";
                 echo "  <td>".$element['logradouroCliente']."</td>";
-                echo "  <td></td>";
+                echo "  <td><a class='bi bi-trash3-fill' href='../controller/ClienteController.php?action=delete&id=".$element["idCliente"]."'><a/></td>";
                 echo "</tr>";
               }
             }
-              
             ?>
           </tbody>
         </table>
