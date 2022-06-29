@@ -19,7 +19,7 @@
             if($this->clienteDAO->deletarCliente($cliente)){
                 echo "<script language='javascript' type='text/javascript'>
                 alert('Dados deletados com sucesso!')
-                window.location.href='index.php'
+                window.location.href='../view/clientes.php'
                 </script>";
             }
         }
@@ -39,7 +39,25 @@
             if ($clienteDAO->adicionarCliente($cliente)) {
                 echo "<script>alert('Registro incluído com sucesso!');document.location='../view/clientes.php'</script>";
             } else {
-                echo "<script>alert('Erro ao gravar registro!, verifique se o livro não está duplicado');history.back()</script>";
+                echo "<script>alert('Erro ao gravar o registro!);history.back()</script>";
+            }
+        }
+
+        public function alterarCliente($cliente){
+            $clienteDAO = new ClienteDAO();
+            $cliente->setNome($_POST['nomeCliente']);
+            $cliente->setRg($_POST['rgCliente']);
+            $cliente->setCpf($_POST['cpfCliente']);
+            $cliente->setUf($_POST['ufCliente']);
+            $cliente->setCidade($_POST['cidadeCliente']);
+            $cliente->setLogradouro($_POST['logradouroCliente']);
+            $cliente->setBairro($_POST['bairroCliente']);
+            $cliente->setCep($_POST['cepCliente']);
+            $cliente->setNum($_POST['numCliente']);
+            if ($clienteDAO->alterarCliente($cliente)) {
+                echo "<script>alert('Registro alterado com sucesso!');document.location='../view/clientes.php'</script>";
+            } else {
+                echo "<script>alert('Erro ao alterar o registro!);history.back()</script>";
             }
         }
 
@@ -50,23 +68,29 @@
         $clienteController = new ClienteController();
     
         $action = $_GET['action'];
-        echo $action;
+        //echo $action;
         if(isset($_GET['id'])){
             $id = $_GET['id'];
         }
         
         switch ($action) {
             case 'delete':
-                echo $id;
+                //echo $id;
                 $cliente = new Cliente();
                 $cliente->setId($id);
-                echo $cliente->getId();
+                //echo $cliente->getId();
                 $clienteController->deletarCliente($cliente);
                 
                 break;
 
             case 'create':
                 $clienteController->adicionarCliente();
+                break;
+            
+            case 'update':
+                $cliente = new Cliente();
+                $cliente->setId($id);
+                $clienteController->alterarCliente($cliente);
                 break;
             
             default:

@@ -35,6 +35,17 @@ require_once("BancoDAO.php");
             mysqli_close($this->banco->getConexao());
             return $result;
         }
+
+        public function alterarCliente($cliente){
+            $sql = "UPDATE `tbcliente` SET `nomeCliente` = '".$cliente->getNome()."', `rgCliente` = '".$cliente->getRg()."', `cpfCliente` = '".$cliente->getCpf()."', `ufCliente` = '".$cliente->getUf()."', `cidadeCliente` = '".$cliente->getCidade()."', `logradouroCliente` = '".$cliente->getLogradouro()."', `bairroCliente` = '".$cliente->getBairro()."', `cepCliente` = '".$cliente->getCep()."', `numCliente` = '".$cliente->getNum()."' WHERE `tbcliente`.`idCliente` = ".$cliente->getId();
+            if(!mysqli_query($this->banco->getConexao(), $sql)){
+                $result = false;
+            }else{
+                $result = true;
+            }
+            mysqli_close($this->banco->getConexao());
+            return $result;
+        }
     }
 
 ?>

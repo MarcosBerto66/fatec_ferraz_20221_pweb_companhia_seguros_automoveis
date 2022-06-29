@@ -12,7 +12,7 @@
         private $conexao;
 
         public function __construct(){
-            echo "Conexão efetuada com sucesso!";
+            //echo "Conexão efetuada com sucesso!";
             $this->conectar();
         }
 
